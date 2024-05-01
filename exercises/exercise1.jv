@@ -1,1 +1,55 @@
+// 1. Describing how to move data from a CSV file 
+//online to a SQLite database file.
+pipeline  FlughafenPipeline{
+
+    // 2. Structure of the pipeline is
+    //described by connecting blocks via pipes.
+    FlughafenExtractor -> FlughafenTextFileInterpreter;
+    FlughafenTextFileInterpreter
+		-> FlughafenCSVInterpreter 
+	   	-> FlughafenTableInterpreter
+		-> FlughafenLoader;
+
+    // 3. Blocks instantiate a blocktype using the oftype 
+    //keyword to define available properties.
+    block FlughafenExtractor oftype HttpExtractor {
+		url: "https://opendata.rhein-kreis-neuss.de/api/explore/v2.1/catalog/datasets/rhein-kreis-neuss-flughafen-weltweit/exports/csv?lang=en&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B";
+	}
+
+    block FlughafenTextFileInterpreter oftype TextFileInterpreter { }
+    // 4.Text file is interpreted as a sheet, containing 
+    //text cells for data manipulation.
+    block FlughafenCSVInterpreter oftype CSVInterpreter {
+		delimiter : ";" ;
+	}
+
+    // 5. Sheet is interpreted as a table, adding structure
+    //and defining value types for columns.
+    block FlughafenTableInterpreter oftype TableInterpreter {
+		header: true;
+		columns: [
+			"Lfd. Nummer" oftype integer,
+			"Name des Flughafens" oftype text,
+			"Ort" oftype text,
+			"Land" oftype text,
+			"IATA" oftype text,
+			"ICAO" oftype text,
+			"Latitude" oftype decimal,
+			"Longitude" oftype decimal,
+			"Altitude" oftype integer,
+			"Zeitzone" oftype decimal,
+			"DST" oftype text,
+			"Zeitzonen-Datenbank" oftype text,
+            "geo_punkt" oftype text
+		];
+	}
+
+// 6. Table is loaded into a SQLite file sink using 
+// structural information to generate the correct table.
+    block FlughafenLoader oftype SQLiteLoader {
+		table: "airports";
+		file: "./airports.sqlite";
+	}
+
+}
 
