@@ -26,29 +26,29 @@ pipeline  FlughafenPipeline{
     // 5. Sheet is interpreted as a table, adding structure
     //and defining value types for columns.
     block FlughafenTableInterpreter oftype TableInterpreter {
-		header: true;
-		columns: [
-			"Lfd. Nummer" oftype integer,
-			"Name des Flughafens" oftype text,
-			"Ort" oftype text,
-			"Land" oftype text,
-			"IATA" oftype text,
-			"ICAO" oftype text,
-			"Latitude" oftype decimal,
-			"Longitude" oftype decimal,
-			"Altitude" oftype integer,
-			"Zeitzone" oftype decimal,
-			"DST" oftype text,
-			"Zeitzonen-Datenbank" oftype text,
-            "geo_punkt" oftype text
+	header: true;
+	columns: [
+		"Lfd. Nummer" oftype integer,
+		"Name des Flughafens" oftype text,
+		"Ort" oftype text,
+		"Land" oftype text,
+		"IATA" oftype text,
+		"ICAO" oftype text,
+		"Latitude" oftype decimal,
+		"Longitude" oftype decimal,
+		"Altitude" oftype integer,
+		"Zeitzone" oftype decimal,
+		"DST" oftype text,
+		"Zeitzonen-Datenbank" oftype text,
+        	"geo_punkt" oftype text
 		];
 	}
 
 // 6. Table is loaded into a SQLite file sink using 
 // structural information to generate the correct table.
     block FlughafenLoader oftype SQLiteLoader {
-		table: "airports";
-		file: "./airports.sqlite";
+	table: "airports";
+	file: "./airports.sqlite";
 	}
 
 }
