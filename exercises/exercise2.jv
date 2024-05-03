@@ -1,29 +1,33 @@
+//Creating a automated data pipeline 
+pipeline  TreesFamily{
 
-pipeline  TreesPipeline{
-
-	TreesExtractor -> TreesTextFileInterpreter;
-    	TreesTextFileInterpreter
+    TreesFamilyExtractor -> TreesFamilyTextFileInterpreter;
+    TreesFamilyTextFileInterpreter
       
-	-> TreesCSVInterpreter 
-        -> TreesColumnDeleter
-	-> TreesTableInterpreter
-	-> TreesLoader;
+	-> TreesFamilyCSVInterpreter 
+        -> TreesSpeciesColumnDeleter
+	-> TreesFamilyTableInterpreter
+	-> TreesFamilyLoader;
 
- 	block TreesExtractor oftype HttpExtractor {
+    //Uploading the data using url
+    block TreesFamilyExtractor oftype HttpExtractor {
 		url: "https://opendata.rhein-kreis-neuss.de/api/v2/catalog/datasets/stadt-neuss-herbstpflanzung-2023/exports/csv";
 	}
 
-   	block TreesTextFileInterpreter oftype TextFileInterpreter { }
+    block TreesFamilyTextFileInterpreter oftype TextFileInterpreter { }
    
-    	block TreesCSVInterpreter oftype CSVInterpreter {
-		delimiter : ";" ;
+   //loading the data
+    block TreesFamilyCSVInterpreter oftype CSVInterpreter {
+	delimiter : ";" ;
 	}
 
-    	block TreesColumnDeleter oftype ColumnDeleter {
+   //Droping the column E i.e "baumart_deutsch"
+    block TreesSpeciesColumnDeleter oftype ColumnDeleter {
         delete: [column E];
-    	}
+	}
 
-    	block TreesTableInterpreter oftype TableInterpreter {
+  //Creating the table  
+    block TreesFamilyTableInterpreter oftype TableInterpreter {
 		header: true;
 		columns: [
 			"lfd_nr" oftype integer,
@@ -31,26 +35,39 @@ pipeline  TreesPipeline{
 			"standort" oftype text,
 			"baumart_botanisch" oftype text,
 			"baumart_deutsch" oftype text,
-			"id" oftype text,
+			"id" oftype Geo_Coordinate,
 			"baumfamilie" oftype text	
 		];
 	}
-
-    	block TreesLoader oftype SQLiteLoader {
-		table: "trees";
-		file: "./trees.sqlite";
+  // Connecting to SQLite database
+    block TreesFamilyLoader oftype SQLiteLoader {
+	table: "trees";
+	file: "./trees.sqlite";
 	}
 
 }
 
+//Filtering data where "stadtteil" starts with "Furth-"
 valuetype City oftype text {
     constraints: [
         StartsWithFurth,
     ];
 }
-
 constraint StartsWithFurth on text:
     value matches /^Furth-/;
+
+	
+//Validating "id" to ensure correct Geo-Coordinates
+valuetype Geo_Coordinate oftype text {
+    constraints: [
+        GEOID,
+    	];
+}
+constraint GEOID oftype RegexConstraint{
+	regex : /^\d{1,3}\.\d+, \d{1,3}\.\d+$/;
+	}
+   
+
 
 
 
