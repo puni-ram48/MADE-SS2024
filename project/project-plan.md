@@ -19,8 +19,8 @@ This data science project investigates the interplay between wildfires and green
 
 ### Datasource1: Historic Wildfire Data 2006 to 2023
 * Metadata URL:https://open.canada.ca/data/en/dataset/a221e7a0-4f46-4be7-9c5a-e29de9a3447e
-* Data URL:https://open.canada.ca/data/en/dataset/a221e7a0-4f46-4be7-9c5a-e29de9a3447e/resource/0206e7fd-19a7-413e-84b2-345d45a852ea
-* Data Type: CSV
+* Data URL:https://open.alberta.ca/dataset/a221e7a0-4f46-4be7-9c5a-e29de9a3447e/resource/80480824-0c50-456c-9723-f9d4fc136141/download/fp-historical-wildfire-data-2006-2023.xlsx
+* Data Type: XLS
 
 
 ### Datasource2: Green House agses from 2005 to 2023
