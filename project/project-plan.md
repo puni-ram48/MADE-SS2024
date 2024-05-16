@@ -17,13 +17,13 @@ This data science project investigates the interplay between wildfires and green
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
-### Datasource1: Historic Wildfire Data 2006 to 2023
+### Datasource1: Historic Wildfire Dataset 2006 to 2023
 * Metadata URL:https://open.canada.ca/data/en/dataset/a221e7a0-4f46-4be7-9c5a-e29de9a3447e
 * Data URL:https://open.alberta.ca/dataset/a221e7a0-4f46-4be7-9c5a-e29de9a3447e/resource/80480824-0c50-456c-9723-f9d4fc136141/download/fp-historical-wildfire-data-2006-2023.xlsx
 * Data Type: XLS
 
 
-### Datasource2: Green House agses from 2005 to 2023
+### Datasource2: Greenhouse Gases Dataset from 2005 to 2023
 * Metadata URL: https://www.kaggle.com/datasets/imtkaggleteam/canadas-greenhouse-gases
 * Data URL: https://www.kaggle.com/datasets/imtkaggleteam/canadas-greenhouse-gases/download?datasetVersionNumber=1
 * Data Type: CSV
