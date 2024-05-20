@@ -1,18 +1,21 @@
 # Project Plan
-
-## Title
-Correlation analysis for Wildfire Data and Greenhouse Gas Emission
-
+-------------------------------------------------------------------------
+## Title : GlobalBlaze: Analyzing Global Trends in Wildfire Burned Areas and Emissions (2002-2023)
+-------------------------------------------------------------------------
 ## Main Question
 
-1. What is the relationship between wildfire occurrences and greenhouse gas emissions?
-2. How do changes in wildfire activity impact climate change dynamics?
+1. What is the trend in global wildfire area burned and emissions from 2002 to 2023?
+2. Is there a correlation between wildfire area burned and emissions globally?
+3. Are there regional variations in the relationship between wildfire area burned and emissions?
 
+-------------------------------------------------------------------------
 ## Description
 
 <!-- Describe your data science project in max. 200 words. Consider writing about why and how you attempt it. -->
-This data science project investigates the interplay between wildfires and greenhouse gas emissions, exploring their mutual influence on climate change dynamics. Analyzing wildfire and greenhouse gas datasets, the project aims to understand correlations between wildfire occurrences and emissions, and their broader impacts on atmospheric composition and climate patterns. Utilizing advanced data analysis techniques, it seeks to uncover insights to inform climate change mitigation strategies. By elucidating these complex interactions, the project contributes to our understanding of wildfire-climate relationships, facilitating the development of more effective measures for environmental sustainability and resilience against climate change impacts.
+The main aim of the "GlobalBlaze" project is to investigate how wildfires release emission gases globally. This includes analyzing datasets spanning from 2002 to 2023, which contain information on
+wildfire burned areas and emissions. By examining these datasets, the project aims to understand the dynamics of emission gases released during wildfires and identify patterns, correlations, and regional variations in emission levels. Ultimately, the goal is to provide insights into the relationship between wildfire activity and emissions, contributing to a better understanding of the environmental impact of wildfires and informing strategies for mitigation and management efforts.
 
+-------------------------------------------------------------------------
 ## Datasources
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
