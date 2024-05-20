@@ -1,6 +1,6 @@
-# Project Plan
+## Project Plan
 
-### GlobalBlaze: Analyzing Global Trends in Wildfire Burned Areas and Emissions (2002-2023)
+# GlobalBlaze: Analyzing Global Trends in Wildfire Burned Areas and Emissions (2002-2023)
 
 ## Main Question
 
