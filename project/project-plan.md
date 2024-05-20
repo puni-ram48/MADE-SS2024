@@ -1,20 +1,19 @@
-# Project Plan-------------------------------------------------------------------------
+# Project Plan
+
 ## Title : GlobalBlaze: Analyzing Global Trends in Wildfire Burned Areas and Emissions (2002-2023)
--------------------------------------------------------------------------
+
 ## Main Question
 
 1. What is the trend in global wildfire area burned and emissions from 2002 to 2023?
 2. Is there a correlation between wildfire area burned and emissions globally?
 3. Are there regional variations in the relationship between wildfire area burned and emissions?
 
--------------------------------------------------------------------------
 ## Description
 
 <!-- Describe your data science project in max. 200 words. Consider writing about why and how you attempt it. -->
 The main aim of the "GlobalBlaze" project is to investigate how wildfires release emission gases globally. This includes analyzing datasets spanning from 2002 to 2023, which contain information on
 wildfire burned areas and emissions. By examining these datasets, the project aims to understand the dynamics of emission gases released during wildfires and identify patterns, correlations, and regional variations in emission levels. Ultimately, the goal is to provide insights into the relationship between wildfire activity and emissions, contributing to a better understanding of the environmental impact of wildfires and informing strategies for mitigation and management efforts.
 
--------------------------------------------------------------------------
 ## Datasources
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
