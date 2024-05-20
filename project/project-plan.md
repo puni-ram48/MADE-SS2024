@@ -37,16 +37,16 @@ The dataset provides monthly biomass burning emissions(Tons) data from 2002 to 2
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
-1. Dataset Search and Acquisition[i1]
-2. Project Planning[i2] 
-3. Data Cleaning and Preprocessing[i3] 
-4. Automated Data Pipeline Creation[i4] 
-5. Testing and Validation[i5]
-6. Create Visualizations[i6] 
-7. Correlation Analysis[i7] 
-8. Reporting and Documentation[i8] 
-9. Create Presentation[i9]
-10. Record Presentation Video[i10]
+1. Dataset Search and Acquisition  [i1]
+2. Project Planning  [i2] 
+3. Data Cleaning and Preprocessing  [i3] 
+4. Automated Data Pipeline Creation  [i4] 
+5. Testing and Validation  [i5]
+6. Create Visualizations  [i6] 
+7. Correlation Analysis  [i7] 
+8. Reporting and Documentation  [i8] 
+9. Create Presentation  [i9]
+10. Record Presentation Video  [i10]
 
 [i1]: https://github.com/puni-ram48/MADE-SS2024/issues/1
 [i2]: https://github.com/puni-ram48/MADE-SS2024/issues/2
