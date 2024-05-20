@@ -18,7 +18,7 @@ wildfire burned areas and emissions. By examining these datasets, the project ai
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
-### Datasource1: Global Monthly Burned Area Dataset [2002 to 2023]
+### Datasource1: Global Monthly Burned Area Dataset [2002-2023]
 * Metadata URL:https://gwis.jrc.ec.europa.eu/apps/country.profile/downloads
 * Data URL:https://effis-gwis-cms.s3.eu-west-1.amazonaws.com/apps/country.profile/MCD64A1_burned_area_full_dataset_2002-2023.zip
 * Data Type: Zipped CSV
