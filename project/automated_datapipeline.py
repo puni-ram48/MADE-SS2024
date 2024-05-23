@@ -72,7 +72,7 @@ def transform_emissions_data(file_path):
                                 'month':'Month',
                                 'gid_0':'Country_Code' ,
                                 'country':'Country_Name',
-                                'region':'Region'}
+                                'region':'Region_Name'}
     emissions_df = rename_columns(emissions_df, emissions_columns_rename)
     return emissions_df
 
