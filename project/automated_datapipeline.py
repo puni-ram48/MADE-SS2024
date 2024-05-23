@@ -41,7 +41,7 @@ def fetch_data_from_db(db_path, table_name):
     df = pd.read_sql_table(table_name, engine)
     return df
 
-#Function to Transform burned area data
+#Function to Transform wildfire data
 def transform_wildfire_data(file_path):
     wildfire_df = load_and_clean_data(file_path)
     wildfire_columns_to_drop = ['gid_1']
@@ -93,7 +93,7 @@ def main():
     wildfire_file = os.path.join(download_path, 'MCD64A1_burned_area_full_dataset_2002-2023.csv')
     emissions_file = os.path.join(download_path, 'emission_gfed_full_2002_2023.csv')
    
-    #Transform the emissions and burned area data
+    #Transform the wildfire and emissions data
     wildfire_df = transform_wildfire_data(wildfire_file)
     emissions_df = transform_emissions_data(emissions_file)
     
