@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 automated_datapipeline.py
+python3 /project/automated_datapipeline.py
