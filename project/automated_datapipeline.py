@@ -240,9 +240,9 @@ def main():
     fetched_emissions_df = fetch_data_from_db(db_path, 'emissions_data')
     fetched_merged_df = fetch_data_from_db(db_path, 'merged_table')
     
-    fetched_wildfire_df.to_csv(os.path.join(download_path, 'wildfire_burned_area_data.csv'), index=False)
-    fetched_emissions_df.to_csv(os.path.join(download_path, 'emissions_data.csv'), index=False)
-    fetched_merged_df.to_csv(os.path.join(download_path, 'merged_data.csv'), index=False)
+    fetched_wildfire_df.to_csv(os.path.join(download_path, 'cleaned_wildfire_burned_area_data.csv'), index=False)
+    fetched_emissions_df.to_csv(os.path.join(download_path, 'cleaned_emissions_data.csv'), index=False)
+    fetched_merged_df.to_csv(os.path.join(download_path, 'cleaned_merged_data.csv'), index=False)
 
 if __name__ == "__main__":
     main()
