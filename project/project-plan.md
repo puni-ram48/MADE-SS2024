@@ -4,10 +4,10 @@
 
 ## Main Question
 
-1. What is the trend in global wildfire burned areas and emissions from 2002 to 2023?
-2. How do wildfire burned areas vary across different landcover types (e.g., forest, savannas, croplands) and geographical regions?
-3. How have emission levels of key pollutants (e.g., CO2, PM2.5) changed over time, and are there any noticeable trends or patterns?
-4. Is there a correlation between wildfire area burned and emissions of diffrent gases?
+1. What are the long-term trends in wildfire burned areas and emissions globally, and are there significant changes over time?
+2. How do seasonal variations affect wildfire activities and emissions, and are there specific months or quarters with higher prevalence or levels?
+3.Which countries or regions experience the most wildfires, and what factors contribute to their prevalence?
+4. Is there a correlation between wildfire area burned and emission gases?
 
 ## Description
 
