@@ -1,0 +1,89 @@
+//creating a automated datapipeline
+pipeline  GoodsTransportPipeline{
+
+    GoodsTransportExtractor 
+        -> GoodsTransportTextFileInterpreter
+        -> GoodsTransportCSVInterpreter 
+        -> GoodsTransportDataSelector
+        -> GoodsTransportColumnDeleter
+	   	  -> GoodsTransportTableInterpreter
+		    -> GoodsTransportLoader;
+ 
+    block GoodsTransportExtractor oftype HttpExtractor {
+		url: "https://www-genesis.destatis.de/genesis/downloads/00/tables/46131-0014_00.csv";
+	  }
+
+    block GoodsTransportTextFileInterpreter oftype TextFileInterpreter { 
+        encoding : "latin6" ; // supports all characters including german umlauts
+    }
+   
+    block GoodsTransportCSVInterpreter oftype CSVInterpreter {
+		delimiter : ";" ;
+	  }
+
+    //selecting the data from the row 9 till end, so that metadata rows will be deleted 
+    block GoodsTransportDataSelector oftype CellRangeSelector {
+       select: range A9:AU*; 
+    }
+
+    //Deletes the columns from F to AS to remove the unwanted data from the dataset 
+    block GoodsTransportColumnDeleter oftype ColumnDeleter {
+        delete: [column F, column G, column H, column I, column J, column K, column L, column M, column N, column O, column P, column Q,
+                column R, column S, column T, column U, column V, column W, column X, column Y, column Z, column AA, column AB, column AC,
+                column AD, column AE, column AF, column AG, column AH, column AI, column AJ, column AK, column AL, column AM, column AN,
+                column AO, column AP, column AQ, column AR, column AS];
+     }
+
+    // Creating a header names to the columns A-E and AT-AU with specified value types
+    block GoodsTransportTableInterpreter oftype TableInterpreter {
+		header: false;
+		columns: [
+				    "year" oftype PositiveIntegers,
+                    "month" oftype GermanMonthNames,
+                    "goods_id" oftype GoodsId,
+                    "goods_name" oftype text,
+                    "goods_source" oftype text,
+                    "abroad" oftype PositiveIntegers,
+                    "total" oftype PositiveIntegers
+		        ];
+	    }
+
+    //loads the data into the SQLite database
+    block GoodsTransportLoader oftype SQLiteLoader {
+		table: "goods";
+		file: "./goodsTransportedByTrain.sqlite";
+	  }
+}
+
+    valuetype PositiveIntegers oftype integer {
+        constraints: [ NumberGreaterThanZero ] ;
+    }
+    //Constraint to ensure that the integer value is greater than zero
+    constraint NumberGreaterThanZero on integer :
+        value > 0 ;
+
+    
+    valuetype GermanMonthNames oftype text {
+        constraints: [ GermanMonthNameConstraint ];
+    }
+    // Constraint to allow only specified German month names
+    constraint GermanMonthNameConstraint oftype AllowlistConstraint {
+        allowlist: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+    }
+
+
+    valuetype GoodsId oftype text {
+        constraints: [ GoodsIdConstraint ];
+    }
+    //Constraint to ensure goods IDs follow a specific pattern
+    constraint GoodsIdConstraint oftype RegexConstraint {
+        regex: /^NST7-[A-Z0-9]{3}/;
+    }
+
+   
+
+
+
+
+
+
