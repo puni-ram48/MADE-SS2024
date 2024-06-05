@@ -143,17 +143,17 @@ def transform_wildfire_data(file_path):
                                     'gid_0':'Country_Code',
                                     'country':'Country_Name',
                                     'region':'Region_Name',
-                                    'forest':'Forest_Burned_Area',
-                                    'savannas':'Savannas_Burned_Area',
-                                    'shrublands_grasslands':'Shrublands_Grasslands_Burned_Area',
-                                    'croplands':'Croplands_Burned_Area',
-                                    'other':'Other_Burned_Area'}
+                                    'forest':'Forest_BA',
+                                    'savannas':'Savannas_BA',
+                                    'shrublands_grasslands':'Shrubs_Grasslands_BA',
+                                    'croplands':'Croplands_BA',
+                                    'other':'Other_BA'}
     wildfire_df = rename_columns(wildfire_df, wildfire_columns_rename)
     wildfire_df = create_quarterly_column(wildfire_df)
     wildfire_df = wildfire_df.reindex(columns=['Year','Month','Quarter','Country_Code','Country_Name',
-                                               'Region_Name','Forest_Burned_Area','Savannas_Burned_Area', 
-                                               'Shrublands_Grasslands_Burned_Area', 'Croplands_Burned_Area', 
-                                               'Other_Burned_Area'])
+                                               'Region_Name','Forest_BA','Savannas_BA', 
+                                               'Shrubs_Grasslands_BA', 'Croplands_BA', 
+                                               'Other_BA'])
     return wildfire_df
 
 def transform_emissions_data(file_path):
