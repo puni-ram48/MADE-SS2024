@@ -6,7 +6,7 @@
 
 1. What are the long-term trends in wildfire burned areas and emissions globally, and are there significant changes over time?
 2. How do seasonal variations affect wildfire activities and emissions, and are there specific months or quarters with higher prevalence or levels?
-3.Which countries or regions experience the most wildfires, and what factors contribute to their prevalence?
+3. Which countries or regions experience the most wildfires, and what factors contribute to their prevalence?
 4. Is there a correlation between wildfire area burned and emission gases?
 
 ## Description
