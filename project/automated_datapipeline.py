@@ -75,7 +75,7 @@ def drop_rows_with_zeros(df, columns):
     Returns:
         pd.DataFrame: DataFrame with rows containing zero values in specified columns dropped.
     """
-    df = df[(df[columns] != 0).all(axis=1)]
+    df = df.loc[~(df[columns] == 0).all(axis=1)]
     return df
 
 def create_quarterly_column(df):
