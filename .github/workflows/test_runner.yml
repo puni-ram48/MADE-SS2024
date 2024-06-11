@@ -1,0 +1,36 @@
+name: Test Runner
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - project/**
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      #install python
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+
+      - name: Make the script files executable
+        run: chmod +x ./project/tests.sh
+
+      - name: Run Tests
+        run: |
+          # Check if tests are too expensive to run
+          if [ "$EXPENSIVE_TESTS" = "true" ]; then
+            echo "Tests are too expensive to run. Using mocks instead."
+            # Add commands here to use mocks for data
+          else
+            # If tests are not too expensive, run the actual tests
+            ./project/tests.sh
+          fi
