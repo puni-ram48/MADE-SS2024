@@ -25,12 +25,5 @@ jobs:
         run: chmod +x ./project/tests.sh
 
       - name: Run Tests
-        run: |
-          # Check if tests are too expensive to run
-          if [ "$EXPENSIVE_TESTS" = "true" ]; then
-            echo "Tests are too expensive to run. Using mocks instead."
-            # Add commands here to use mocks for data
-          else
-            # If tests are not too expensive, run the actual tests
-            ./project/tests.sh
-          fi
+        run: ./project/tests.sh
+       
