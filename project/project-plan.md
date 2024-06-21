@@ -32,7 +32,7 @@ The dataset provides monthly burned area(ha) data from 2002 to 2023, categorized
 * Data URL: https://effis-gwis-cms.s3.eu-west-1.amazonaws.com/apps/country.profile/emission_gfed_full_2002_2023.zip
 * Data Type:Zipped CSV
 
-The dataset provides monthly biomass burning emissions(Tons) data from 2002 to 2023, categorized by pollutant and covering all countries and sub-country administrative units.  It facilitates analysis of the environmental impact of biomass burning activities, including emissions of CO2, CO, TPM, PM2.5, TPC, NMHC, OC, CH4, SO2, BC, and NOx.
+The dataset provides monthly biomass burning emissions(Tons) data from 2002 to 2023, categorized by pollutant and covering all countries and sub-country administrative units. It facilitates analysis of the environmental impact of biomass burning activities, including emissions of CO2, CO, TPM, PM2.5, TPC, NMHC, OC, CH4, SO2, BC, and NOx.
 
 ## Work Packages
 
