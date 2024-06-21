@@ -1,0 +1,91 @@
+//Defined the GTFSPipeline
+pipeline GTFSPipeline {
+
+    //Block to download the GTFS ZIP file from the specified URL
+    block GTFSZipExtractor oftype HttpExtractor {
+        url: "https://gtfs.rhoenenergie-bus.de/GTFS.zip";
+    }
+
+    //Block to interpret the downloaded file as a ZIP archive
+    block GTFSZipArchiveInterpreter oftype ArchiveInterpreter {
+        archiveType: "zip";
+    }
+
+    //Block to pick the "stops.txt" file from the extracted ZIP archive
+    block StopsFilePicker oftype FilePicker {
+        path: "/stops.txt";
+    }
+
+    //Block to interpret the "stops.txt" file as a text file with UTF-8 encoding so that umlauts will be included
+    block StopsTextFileInterpreter oftype TextFileInterpreter {
+        encoding : "utf8" ;
+    }
+
+    //Block to interpret the text file as a CSV with specified delimiter and enclosing characters
+    block StopsCSVInterpreter oftype CSVInterpreter{
+        delimiter: ',';
+        enclosing: '"';
+		enclosingEscape: '"';
+	}
+    
+    // Block to interpret the CSV file into a table with specified columns and their types 
+    block StopsTableInterpreter oftype TableInterpreter {
+        header: true;
+        columns: [
+        "stop_id" oftype integer,
+        "stop_name" oftype text,
+        "stop_lat" oftype GeoCoordinate,
+        "stop_lon" oftype GeoCoordinate,
+        "zone_id" oftype ZoneID,
+        ];
+    }
+
+    //Block to load the interpreted table into an SQLite database
+    block GTFSSQLloader oftype SQLiteLoader{
+        table: 'stops';
+        file: './gtfs.sqlite';
+    }
+
+    valuetype ZoneID oftype integer {
+        constraints: [ 
+            Zoneof1645Only, 
+        ];
+    }
+    //Constraint to ensure ZoneId is equal to 1645.
+    constraint Zoneof1645Only on integer:
+        value==1645;
+         
+    valuetype GeoCoordinate oftype decimal {
+        constraints: [
+            GeoCoordinateRange,
+        ];
+    }       
+    // Constraint to specify the range of geocoordinates.
+    constraint GeoCoordinateRange oftype RangeConstraint {
+        lowerBound: -90.0;
+        lowerBoundInclusive: true;
+        upperBound: 90.0;
+        upperBoundInclusive: true;
+    }
+
+    //Defined the pipeline sequence for processing
+    GTFSZipExtractor
+        -> GTFSZipArchiveInterpreter
+        -> StopsFilePicker
+        -> StopsTextFileInterpreter 
+        -> StopsCSVInterpreter
+        -> StopsTableInterpreter
+        -> GTFSSQLloader  ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
