@@ -87,7 +87,7 @@ Please ensure your code is well-documented.
 This project was initiated and completed by Puneetha Dharmapura Shrirama. 
 
 ## Special Thanks to Our Tutors:
-I would like to extend my gratitude to our tutors **Philip Heltweg** and **Georg Schwarz** for their guidance and support throughout this project. Their expertise and insights have been instrumental in shaping my approach and methodologies. This project would not have been possible without their mentorship and encouragement.
+I would like to extend my gratitude to our tutors **Philip Heltweg** and **Georg Schwarz** for their guidance and support throughout this project.
 
 ## License
-This project is licensed under the  - see the [LICENSE.md](LICENSE) file for details.
+This project is licensed under the  - see the [LICENSE](LICENSE.md) file for details.
