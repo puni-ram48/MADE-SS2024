@@ -3,7 +3,7 @@
 <img src="project\pictures\wildfire.png" width="800" height="466">
 
 ## Project Overview
-This project investigates global wildfire trends and their impact on emissions from 2002 to 2023 using datasets from the Global Wildfire Information System (GWIS). It aims to analyze long-term trends, seasonal variations, regional prevalence, and the correlation between burned areas and emission gases to enhance understanding of wildfire patterns and their environmental implications. By addressing these aspects, the project seeks to identify regions most affected by wildfires and the contributing factors, providing insights for mitigation strategies.
+This project investigates global wildfire trends and their impact on emissions from 2002 to 2023 using datasets from the Global Wildfire Information System (GWIS). It aims to analyze long-term trends, seasonal variations, regional prevalence, and the correlation between burned areas and emission gases to enhance understanding of wildfire patterns and their environmental implications.
 
 ### Datasets
 1. [**Global Monthly Burned Area Dataset [2002-2023]**](https://gwis.jrc.ec.europa.eu/apps/country.profile/downloads): The dataset includes monthly burned area data (in hectares) from 2002 to 2023 for all countries and regions. It categorizes the data by types of land, such as forests, savannas, shrublands/grasslands, croplands, and others. This helps in analyzing fire patterns and their effects on different regions and types of land.
