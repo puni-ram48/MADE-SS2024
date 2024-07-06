@@ -1,4 +1,4 @@
-🌍 #GlobalBlaze: Analyzing Global Trends in Wildfire Burned Areas and Emissions (2002-2023)
+# 🌍GlobalBlaze: Analyzing Global Trends in Wildfire Burned Areas and Emissions (2002-2023)
 
 <img src="project\pictures\wildfire.png" width="800" height="466">
 
