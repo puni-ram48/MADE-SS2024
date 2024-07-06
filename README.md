@@ -1,51 +1,93 @@
-# Exercise Badges
+# GlobalBlaze: Analyzing Global Trends in Wildfire Burned Areas and Emissions (2002-2023)
 
-![](https://byob.yarr.is/puni-ram48/MADE-SS2024/score_ex1) ![](https://byob.yarr.is/puni-ram48/MADE-SS2024/score_ex2) ![](https://byob.yarr.is/puni-ram48/MADE-SS2024/score_ex3) ![](https://byob.yarr.is/puni-ram48/MADE-SS2024/score_ex4) ![](https://byob.yarr.is/puni-ram48/MADE-SS2024/score_ex5)
+<img src="project\pictures\wildfire.png" width="700" height="466">
 
-# Methods of Advanced Data Engineering Template Project
+## Project Overview
+This project investigates global wildfire trends and their impact on emissions from 2002 to 2023 using datasets from the Global Wildfire Information System (GWIS). It aims to analyze long-term trends, seasonal variations, regional prevalence, and the correlation between burned areas and emission gases to enhance understanding of wildfire patterns and their environmental implications. By addressing these aspects, the project seeks to identify regions most affected by wildfires and the contributing factors, providing insights for mitigation strategies.
 
-This template project provides some structure for your open data project in the MADE module at FAU.
-This repository contains (a) a data science project that is developed by the student over the course of the semester, and (b) the exercises that are submitted over the course of the semester.
-Before you begin, make sure you have [Python](https://www.python.org/) and [Jayvee](https://github.com/jvalue/jayvee) installed. We will work with [Jupyter notebooks](https://jupyter.org/). The easiest way to do so is to set up [VSCode](https://code.visualstudio.com/) with the [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
+### Datasets
+1. [**Global Monthly Burned Area Dataset [2002-2023]**](https://gwis.jrc.ec.europa.eu/apps/country.profile/downloads): The dataset includes monthly burned area data (in hectares) from 2002 to 2023 for all countries and regions. It categorizes the data by types of land, such as forests, savannas, shrublands/grasslands, croplands, and others. This helps in analyzing fire patterns and their effects on different regions and types of land.
+   
+2. [**Global Monthly Emissions Dataset [2002-2023]**](https://gwis.jrc.ec.europa.eu/apps/country.profile/downloads): The dataset gives monthly data on how much pollution is released from burning plants (biomass) from 2002 to 2023. It shows how much CO2, CO, particles like dust and smoke (TPM and PM2.5), carbon, hydrocarbons, organic carbon, methane, sulfur dioxide, black carbon, and nitrogen oxides are released by different countries and regions. This helps to understand the environmental impact of burning plant materials.
 
-To get started, please follow these steps:
-1. Create your own fork of this repository. Feel free to rename the repository right after creation, before you let the teaching instructors know your repository URL. **Do not rename the repository during the semester**.
-2. Setup the exercise feedback by changing the exercise badge sources in the `README.md` file following the patter `![](https://byob.yarr.is/<github-user-name>/<github-repo>/score_ex<exercise-number>)`. 
-For example, if your user is _myuser_ and your repo is _myrepo_, then update the badge for _exercise 1_ to `![](https://byob.yarr.is/myrepo/myuser/score_ex1)`. Proceed with the remaining badges accordingly.
+## Tools and Technologies Used
+- Data Analysis: Python (Pandas,Numpy)
+- Visualization: Matplotlib, Seaborn
+- Version Control: Git, GitHub
 
+[**Project Data Report**](project/data-report.pdf): Document detailing data cleaning and pipeline procedures.
 
-## Project Work
-Your data engineering project will run alongside lectures during the semester. We will ask you to regularly submit project work as milestones so you can reasonably pace your work. All project work submissions **must** be placed in the `project` folder.
+[**Project Analysis Report**](project/analysis-report.pdf): Final report containing data analysis and visualizations.
 
-### Exporting a Jupyter Notebook
-Jupyter Notebooks can be exported using `nbconvert` (`pip install nbconvert`). For example, to export the example notebook to html: `jupyter nbconvert --to html examples/final-report-example.ipynb --embed-images --output final-report.html`
+[**Project EDA**](project/EDA_report.ipynb): Notebook showcasing exploratory data analysis (EDA) for the project.
 
+[**Presentation Slides**](project/slides.ppt)
 
-## Exercises
-During the semester you will need to complete exercises using [Jayvee](https://github.com/jvalue/jayvee). You **must** place your submission in the `exercises` folder in your repository and name them according to their number from one to five: `exercise<number from 1-5>.jv`.
+[**Presenation Video Link**](project/presentation-video.md)
 
-In regular intervalls, exercises will be given as homework to complete during the semester. Details and deadlines will be discussed in the lecture, also see the [course schedule](https://made.uni1.de/). At the end of the semester, you will therefore have the following files in your repository:
+## Installation and Usage
+Instructions for setting up the project environment and running the analysis scripts.
 
-1. `./exercises/exercise1.jv`
-2. `./exercises/exercise2.jv`
-3. `./exercises/exercise3.jv`
-4. `./exercises/exercise4.jv`
-5. `./exercises/exercise5.jv`
+```bash
+# Clone the repository
+git clone (https://github.com/puni-ram48/MADE-SS2024.git)
 
-### Exercise Feedback
-We provide automated exercise feedback using a GitHub action (that is defined in `.github/workflows/exercise-feedback.yml`). 
+# Install dependencies
+pip install -r requirements.txt
 
-To view your exercise feedback, navigate to Actions -> Exercise Feedback in your repository.
-
-The exercise feedback is executed whenever you make a change in files in the `exercise` folder and push your local changes to the repository on GitHub. To see the feedback, open the latest GitHub Action run, open the `exercise-feedback` job and `Exercise Feedback` step. You should see command line output that contains output like this:
-
-```sh
-Found exercises/exercise1.jv, executing model...
-Found output file airports.sqlite, grading...
-Grading Exercise 1
-	Overall points 17 of 17
-	---
-	By category:
-		Shape: 4 of 4
-		Types: 13 of 13
 ```
+
+## Data Pipeline and Testing
+
+### Data Pipeline [here](project/automated_datapipeline.py)
+Our project includes an automated data pipeline designed for wildfire analysis:
+
+1. **Data Fetching**: Automatically retrieves monthly wildfire burned area and emission datasets from specified sources.
+2. **Data Transformation and Cleaning**: Applies necessary transformations and cleans the data to ensure accuracy and consistency.
+3. **Data Loading**: Transformed data is loaded into structured formats suitable for analysis, ensuring integrity for further investigation
+
+This pipeline ensures that our wildfire data is prepared and maintained for reliable analysis of trends and impacts.
+
+### Test Script [here](project/automated_testing.py)
+We have developed a rigorous test script to validate our wildfire data pipeline:
+
+1. Tests include verification of data fetching accuracy.
+2. Ensures proper data cleaning and transformation procedures are followed.
+3. Validates data integrity and consistency throughout the pipeline.
+
+### Automated Workflow [here](.github/workflows/test_runner.yml)
+To maintain the reliability of our wildfire data pipeline, we have set up an automated workflow using GitHub Actions:
+
+* **Continuous Integration Tests**: Automatically runs our test script upon every push to the main branch.Ensures any updates or modifications do not compromise the functionality and accuracy of the data pipeline.
+  
+This automated workflow guarantees a robust and error-free approach to analyzing wildfire trends and impacts, ensuring high-quality project outcomes.
+
+## How to Run the Data Pipeline and Tests
+Provide detailed instructions on how to execute the data pipeline and run the test scripts. Include any necessary commands or steps to set up the environment.
+
+```bash
+# command to run the data pipeline
+python3 automated_datapipeline.py
+
+# command to execute the test script
+python3 automated_testing.py
+```
+
+## Contributing
+We welcome contributions to this project! If you would like to contribute, please follow these steps:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes and commit them (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Create a new Pull Request.
+
+Please ensure your code is well-documented.
+
+## Authors and Acknowledgment
+This project was initiated and completed by Puneetha Dharmapura Shrirama. 
+
+## Special Thanks to Our Tutors:
+I would like to extend my gratitude to our tutors **Philip Heltweg** and **Georg Schwarz** for their guidance and support throughout this project. Their expertise and insights have been instrumental in shaping my approach and methodologies. This project would not have been possible without their mentorship and encouragement.
+
+## License
+This project is licensed under the  - see the [LICENSE.md](LICENSE) file for details.
