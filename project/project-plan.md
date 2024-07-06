@@ -23,7 +23,7 @@ wildfire burned areas and emissions. By examining these datasets, the project ai
 * Metadata URL:https://gwis.jrc.ec.europa.eu/apps/country.profile/downloads
 * Data URL:https://effis-gwis-cms.s3.eu-west-1.amazonaws.com/apps/country.profile/MCD64A1_burned_area_full_dataset_2002-2023.zip
 * Data Type: Zipped CSV
-* Data License:(Creative Commons Attribution 4.0 International)(https://creativecommons.org/licenses/by/4.0/)
+* Data License:[Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
 
 The dataset provides monthly burned area(ha) data from 2002 to 2023, categorized by landcover classes, for all countries and sub-country administrative units. It includes information on forest, savannas, shrublands/grasslands, croplands, and other burned areas, facilitating analysis of fire patterns and impacts across different regions and land types.
 
@@ -32,7 +32,7 @@ The dataset provides monthly burned area(ha) data from 2002 to 2023, categorized
 * Metadata URL:https://gwis.jrc.ec.europa.eu/apps/country.profile/downloads 
 * Data URL: https://effis-gwis-cms.s3.eu-west-1.amazonaws.com/apps/country.profile/emission_gfed_full_2002_2023.zip
 * Data Type:Zipped CSV
-* Data License:(Creative Commons Attribution 4.0 International)(https://creativecommons.org/licenses/by/4.0/)
+* Data License:[Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
 
 The dataset provides monthly biomass burning emissions(Tons) data from 2002 to 2023, categorized by pollutant and covering all countries and sub-country administrative units. It facilitates analysis of the environmental impact of biomass burning activities, including emissions of CO2, CO, TPM, PM2.5, TPC, NMHC, OC, CH4, SO2, BC, and NOx.
 
