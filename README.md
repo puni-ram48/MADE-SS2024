@@ -1,6 +1,6 @@
 # GlobalBlaze: Analyzing Global Trends in Wildfire Burned Areas and Emissions (2002-2023)
 
-<img src="project\pictures\wildfire.png" width="700" height="466">
+<img src="project\pictures\wildfire.png" width="800" height="466">
 
 ## Project Overview
 This project investigates global wildfire trends and their impact on emissions from 2002 to 2023 using datasets from the Global Wildfire Information System (GWIS). It aims to analyze long-term trends, seasonal variations, regional prevalence, and the correlation between burned areas and emission gases to enhance understanding of wildfire patterns and their environmental implications. By addressing these aspects, the project seeks to identify regions most affected by wildfires and the contributing factors, providing insights for mitigation strategies.
