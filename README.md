@@ -90,4 +90,4 @@ This project was initiated and completed by Puneetha Dharmapura Shrirama.
 I would like to extend my gratitude to our tutors **Philip Heltweg** and **Georg Schwarz** for their guidance and support throughout this project.
 
 ## License
-This project is licensed under the  - see the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
