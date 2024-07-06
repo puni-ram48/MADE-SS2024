@@ -30,7 +30,7 @@ Instructions for setting up the project environment and running the analysis scr
 
 ```bash
 # Clone the repository
-git clone (https://github.com/puni-ram48/MADE-SS2024.git)
+git clone https://github.com/puni-ram48/MADE-SS2024.git
 
 # Install dependencies
 pip install -r requirements.txt
