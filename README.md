@@ -21,7 +21,7 @@ This project investigates global wildfire trends and their impact on emissions f
 
 [**Project EDA**](project/EDA_report.ipynb): Notebook showcasing exploratory data analysis (EDA) for the project.
 
-[**Presentation Slides**](project/slides.ppt)
+[**Presentation Slides**](project/slides.pdf)
 
 [**Presenation Video Link**](project/presentation-video.md)
 
